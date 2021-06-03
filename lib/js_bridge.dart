@@ -19,7 +19,7 @@ class JsBridge {
   final String _fetchData = "${_protocolScheme}return/fetch";
   final String _returnData = "${_protocolScheme}return/sendMsg/";
   String _dartToJs =
-      "javascript:WebViewJavascriptBridge._handleMessageFromNative('%s');";
+      "javascript:AndroidInterface._handleMessageFromNative('%s');";
 
   void loadJs(WebViewController controller) {
     _webViewController = controller;
@@ -85,7 +85,7 @@ class JsBridge {
   }
 
   void _fetchQueue() {
-    _loadJs("WebViewJavascriptBridge._fetchQueue()");
+    _loadJs("AndroidInterface._fetchQueue()");
   }
 
   void callHandler(String handlerName,
